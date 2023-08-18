@@ -43,7 +43,7 @@ Because they make up everything!
 
 Now using the `text` request parameter
 ```shell
-curl --get  --data-urlencode 'text=Tell me a joke about a cow.' http://localhost:8080/ai/simple 
+curl --get  --data-urlencode 'message=Tell me a joke about a cow.' http://localhost:8080/ai/simple 
 ```
 A sample response is
 
