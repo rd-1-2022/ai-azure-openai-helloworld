@@ -1,4 +1,4 @@
-package org.springframework.ai.openai.samples.helloworld.simple;
+package org.springframework.samples.ai.openai.helloworld;
 
 import org.springframework.ai.client.AiClient;
 import org.springframework.beans.factory.annotation.Autowired;
