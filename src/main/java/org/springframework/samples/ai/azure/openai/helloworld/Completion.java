@@ -2,7 +2,7 @@ package org.springframework.samples.ai.azure.openai.helloworld;
 
 public class Completion {
 
-    private String completion;
+    private final String completion;
 
     public Completion(String completion) {
         this.completion = completion;

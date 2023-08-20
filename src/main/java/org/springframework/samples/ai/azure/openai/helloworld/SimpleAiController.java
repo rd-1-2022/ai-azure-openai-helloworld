@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SimpleAiController {
 
-	private AiClient aiClient;
+    private final AiClient aiClient;
 
-	@Autowired
-	public SimpleAiController(AiClient aiClient) {
-		this.aiClient = aiClient;
-	}
+    @Autowired
+    public SimpleAiController(AiClient aiClient) {
+        this.aiClient = aiClient;
+    }
 
-	@GetMapping("/ai/simple")
-	public Completion completion(@RequestParam(value = "message", defaultValue = "Tell me a joke") String message) {
-		return new Completion(aiClient.generate(message));
-	}
+    @GetMapping("/ai/simple")
+    public Completion completion(@RequestParam(value = "message", defaultValue = "Tell me a joke") String message) {
+        return new Completion(aiClient.generate(message));
+    }
 }
