@@ -11,7 +11,7 @@ The response to the request is from the Azure OpenAI Service.
 
 Before using the AI commands, obtain your Azure OpenAI `endpoint` and `api-key` from the Azure OpenAI Service section on [Azure Portal](https://portal.azure.com)
 
-The Spring AI project defines a configuration property named `spring.ai.openai.api-key` that you should set to the value of the `API Key` obtained from `openai.com`.
+The Spring AI project defines a configuration property named `spring.ai.azure.openai.api-key` that you should set to the value of the `API Key` obtained from Azure.
 
 Exporting an environment variables is one way to set these configuration properties.
 ```shell
@@ -30,7 +30,7 @@ export SPRING_AI_AZURE_OPENAI_ENDPOINT=<INSERT ENDPOINT URL HERE>
 To get a response to the default request of "Tell me a joke"
 
 ```shell
-curl http://localhost:8080/ai/simple
+http http://localhost:8080/ai/simple
 ```
 
 A sample response is
