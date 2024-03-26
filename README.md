@@ -13,11 +13,15 @@ Before using the AI commands, obtain your Azure OpenAI `endpoint` and `api-key` 
 
 The Spring AI project defines a configuration property named `spring.ai.azure.openai.api-key` that you should set to the value of the `API Key` obtained from Azure.
 
+Similarly, you need to set the endpoints name using the property `spring.ai-azure.openai.endpoint`.
+
 Exporting an environment variables is one way to set these configuration properties.
 ```shell
 export SPRING_AI_AZURE_OPENAI_API_KEY=<INSERT KEY HERE>
 export SPRING_AI_AZURE_OPENAI_ENDPOINT=<INSERT ENDPOINT URL HERE>
 ```
+
+Next you need to create an Azure AI Deployment and specify the deployent name as a configuration property.
 
 ### Create an Azure AI Deployment
 
@@ -32,18 +36,24 @@ For now, to create an easy setup, create a deployment in the [Azure AI Portal](h
 
 This configuration is compatible with the default settings of the Spring Boot Azure AI Starter and its auto-configuration capabilities.
 
-If you have a different `Deployment Name`, modify the corresponding configuration property as shown below:
-
-
 ```shell
-spring.ai.azure.openai.chat.options.model=<my deployment name>
+export SPRING_AI_AZURE_OPENAI_CHAT_OPTIONS_DEPLOYMENT_NAME=<INSERT DEPLOYMENT NAME HERE>
 ```
 
-The terminology used in Azure OpenAI, specifically the mix-up between `Deployment Name` and `Model Name`, stems from the structural differences between Azure OpenAI and OpenAI deployments.
-In the context of OpenAI, there is only a `Model Name` without a `Deployment Name`.
-This discrepancy has led a property named `deploymentOrModelName` within the Azure OpenAI client library.
+## Application configuration
+The environment variables you defined before are referenced in the `application.yml` file that is in the `./src/main/resources` directory.
 
-To avoid this confusion, a future update of Spring AI will rename the property `spring.ai.azure.openai.chat.options.model` to `spring.ai.azure.openai.chat.options.deployment-name`.
+```yaml
+spring:
+  ai:
+    azure:
+      openai:
+        api-key: <INSERT KEY HERE>
+        endpoint: <INSERT ENDPOINT URL HERE>
+        chat:
+          options:
+            deployment-name: <INSERT DEPLOYMENT NAME HERE>
+```
 
 ## Building and running
 

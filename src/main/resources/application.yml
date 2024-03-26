@@ -1,0 +1,11 @@
+spring:
+  ai:
+    azure:
+      openai:
+        api-key: ${SPRING_AI_AZURE_OPENAI_API_KEY}
+        endpoint: ${SPRING_AI_AZURE_OPENAI_ENDPOINT}
+        chat:
+          options:
+            deployment-name: ${SPRING_AI_AZURE_OPENAI_CHAT_OPTIONS_DEPLOYMENT_NAME}
+
+
